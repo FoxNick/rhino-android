@@ -88,7 +88,7 @@ final class ExternalScriptable implements Scriptable {
     }
 
     private boolean isEmpty(String name) {
-        return name.equals("");
+        return "".equals(name);
     }
 
     /**

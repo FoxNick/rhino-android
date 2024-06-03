@@ -57,17 +57,17 @@ public class RhinoScriptEngineFactory extends ScriptEngineFactoryBase {
     }
 
     public Object getParameter(String key) {
-        if (key.equals(ScriptEngine.NAME)) {
+        if (ScriptEngine.NAME.equals(key)) {
             return "javascript";
-        } else if (key.equals(ScriptEngine.ENGINE)) {
+        } else if (ScriptEngine.ENGINE.equals(key)) {
             return "Mozilla Rhino";
-        } else if (key.equals(ScriptEngine.ENGINE_VERSION)) {
+        } else if (ScriptEngine.ENGINE_VERSION.equals(key)) {
             return "1.7.7";
-        } else if (key.equals(ScriptEngine.LANGUAGE)) {
+        } else if (ScriptEngine.LANGUAGE.equals(key)) {
             return "ECMAScript";
-        } else if (key.equals(ScriptEngine.LANGUAGE_VERSION)) {
+        } else if (ScriptEngine.LANGUAGE_VERSION.equals(key)) {
             return "1.8";
-        } else if (key.equals("THREADING")) {
+        } else if ("THREADING".equals(key)) {
             return "MULTITHREADED";
         } else {
             throw new IllegalArgumentException("Invalid key");
