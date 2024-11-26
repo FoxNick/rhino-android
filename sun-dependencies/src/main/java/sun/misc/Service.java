@@ -25,6 +25,7 @@
 
 package sun.misc;
 
+import io.github.pixee.security.BoundedLineReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -161,7 +162,7 @@ public final class Service {
                                  List names, Set returned)
         throws IOException, ServiceConfigurationError
     {
-        String ln = r.readLine();
+        String ln = BoundedLineReader.readLine(r, 5_000_000);
         if (ln == null) {
             return -1;
         }
